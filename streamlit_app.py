@@ -1,5 +1,6 @@
  #Import os to set API key
 import os
+import openai
 # Import OpenAI as main LLM service
 from langchain.llms import OpenAI
 # Bring in streamlit for UI/app interface
@@ -26,7 +27,7 @@ os.environ['OPENAI_API_KEY'] = 'sk-N3WBcq8ca63KVatNtdItT3BlbkFJiLx9oplEFNZU4YM8R
 llm = OpenAI(temperature=0.9, verbose=True)
 
 # Create and load PDF Loader
-loader =  PyPDFLoader('C:\\file\\annualreport.pdf')
+loader =  PyPDFLoader('C:\\file\\file.pdf')
 # Split pages from pdf 
 pages = loader.load_and_split()
 # Load documents into vector database aka ChromaDB
